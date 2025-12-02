@@ -347,44 +347,36 @@ body {
 
 /* ===== Manifesto Section ===== */
 .manifesto-section {
-    background: var(--bg-light);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
 }
 
 .manifesto-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.manifesto-item {
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid var(--border);
 }
 
-.manifesto-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px var(--shadow);
+.manifesto-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
 }
 
-.manifesto-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.manifesto-text {
+    text-align: left;
 }
 
-.manifesto-item h3 {
-    font-size: 1.2rem;
-    color: var(--primary);
-    margin-bottom: 0.75rem;
+.manifesto-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
 }
 
-.manifesto-item p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.7;
+.manifesto-text p:last-child {
+    margin-bottom: 0;
 }
 
 /* ===== About Section ===== */
@@ -540,7 +532,56 @@ body {
 }
 
 /* ===== Responsive Design ===== */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .hero-decoration {
+        width: 400px;
+        height: 400px;
+        right: -150px;
+    }
+}
+
+/* Mobile Large */
 @media (max-width: 768px) {
+    :root {
+        --nav-height: 60px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
@@ -562,6 +603,11 @@ body {
         padding: 0.75rem 0;
     }
 
+    .nav-links a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
     .mobile-menu-btn {
         display: flex;
     }
@@ -578,12 +624,36 @@ body {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    .hero {
+        min-height: calc(100vh - var(--nav-height));
+        padding: calc(var(--nav-height) + 40px) 0 40px;
+    }
+
+    .hero-content {
+        padding: 0 16px;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
+        letter-spacing: -0.5px;
     }
 
     .hero .tagline {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero .description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.7;
+    }
+
+    .hero-decoration {
+        width: 300px;
+        height: 300px;
+        right: -100px;
+        opacity: 0.08;
     }
 
     .section {
@@ -591,40 +661,213 @@ body {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
     }
 
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+        width: auto;
+    }
+
+    /* Eventi */
     .events-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
-    .manifesto-content {
-        grid-template-columns: 1fr;
+    .event-header {
+        padding: 1.25rem;
+    }
+
+    .event-title {
+        font-size: 1.15rem;
+    }
+
+    .event-body {
+        padding: 1.25rem;
+    }
+
+    .event-description {
+        font-size: 0.9rem;
+    }
+
+    /* Manifesto */
+    .manifesto-section {
+        padding: 60px 0;
+    }
+
+    .manifesto-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .manifesto-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+    }
+
+    /* About */
+    .about-social {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .social-btn {
+        justify-content: center;
+        padding: 0.9rem 1.25rem;
+        font-size: 0.95rem;
     }
 
     .team-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
-    .about-social {
-        flex-direction: column;
-        align-items: center;
+    .team-image {
+        height: 220px;
+    }
+
+    .team-info {
+        padding: 1.25rem;
+    }
+
+    .team-name {
+        font-size: 1.1rem;
+    }
+
+    .team-bio {
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 2.5rem 0 1.25rem;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-brand .logo {
+        font-size: 1.3rem;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        padding-top: 1.25rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
     }
 }
 
+/* Mobile Small */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
     }
 
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    .hero .description {
+        font-size: 0.95rem;
+    }
+
     .btn {
-        padding: 12px 24px;
+        padding: 11px 24px;
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .manifesto-title {
+        font-size: 1.6rem;
+    }
+
+    .manifesto-text p {
+        font-size: 0.95rem;
+    }
+
+    .event-card {
+        border-radius: 12px;
+    }
+
+    .team-card {
+        border-radius: 12px;
+    }
+
+    .team-image {
+        height: 200px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: calc(var(--nav-height) + 30px) 0 50px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    .hero .description {
         font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Touch-friendly hover states */
+@media (hover: none) {
+    .event-card:hover,
+    .team-card:hover,
+    .social-btn:hover {
+        transform: none;
+    }
+
+    .nav-links a:hover::after {
+        width: 0;
+    }
+
+    .btn-primary:hover {
+        transform: none;
+    }
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+    .navbar {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .footer {
+        padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
     }
 }
