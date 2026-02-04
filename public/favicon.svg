@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <style>
-    /* Use common emoji font fallbacks so colored emoji render on most platforms */
-    text { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", sans-serif; font-size:44px; }
-  </style>
-  <rect width="100%" height="100%" fill="none" />
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">👰‍♀️🤵‍♂️</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Napoli Software logo">
+  <rect width="100%" height="100%" rx="12" ry="12" fill="#007DC5" />
+  <!-- Accent ring -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#FFB800" stroke-width="2" opacity="0.12" />
+  <!-- Initials NS -->
+  <text x="50%" y="52%" text-anchor="middle" fill="#ffffff" font-family="Montserrat, Arial, Helvetica, sans-serif" font-weight="700" font-size="26">NS</text>
 </svg>
