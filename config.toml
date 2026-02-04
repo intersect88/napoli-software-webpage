@@ -1,0 +1,8 @@
+baseURL = "https://intersect88.github.io/napoli-software-webpage/"
+languageCode = "it-it"
+title = "Napoli Software"
+theme = "hugo-brewm"
+
+[params]
+  author = "Napoli Software"
+  description = "User group Napoli Software"
